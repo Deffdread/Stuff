@@ -26,7 +26,7 @@ function ScoreState:enter(params)
     end
 
     local spriteScoreY = (math.floor(spritePosition / 8))*16 --Y position in sprite sheet. 8 icons per row, 16 bits wide
-    local spriteScoreX = ((1-(math.ceil(spritePosition/8) - (spritePosition / 8)))*8)*16  --X position in sprite sheet. After finding Y, use decimal portion to determine X by multiplying with 8 then by 16
+    local spriteScoreX = ((1-(math.ceil((spritePosition/8)+0.00001) - (spritePosition / 8)))*8)*16  --X position in sprite sheet. After finding Y, use decimal portion to determine X by multiplying with 8 then by 16
 
     quad = love.graphics.newQuad(spriteScoreX, spriteScoreY, 16, 16, SCORE:getDimensions())
 end
