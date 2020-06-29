@@ -1,4 +1,3 @@
 Starfield demo
 
-![](starfield.gif)
-Check starfield.gif
+![](https://github.com/Deffdread/Stuff/blob/master/Starfield/starfield.gif)
