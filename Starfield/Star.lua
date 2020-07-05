@@ -25,7 +25,7 @@ function Star:update()
     --star
     self.sx = self.x/self.sz * VIRTUAL_WIDTH/2 --Scale star x with z
     self.sy = self.y/self.sz * VIRTUAL_HEIGHT/2 --Scale star y with z
-    self.r = 1 * self.z/self.sz --Scale star size 
+    self.r = 0.5 * self.z/self.sz --Scale star size 
 
     --trail
     self.px = self.x/self.pz * VIRTUAL_WIDTH/2 
@@ -43,6 +43,8 @@ function Star:update()
         self.pz = self.z
     end
 
+
+    --length of trail
     if self.oldFrame == 2 then
         self.pz = self.sz
         self.oldFrame = 0
@@ -55,6 +57,6 @@ end
 
 function Star:render()
     love.graphics.setColor(255/255, 255/255, 255/255, 1)
-    --love.graphics.ellipse("fill", self.sx, self.sy, self.r, self.r) 
+    love.graphics.ellipse("fill", self.sx, self.sy, self.r, self.r) 
     love.graphics.line(self.sx, self.sy, self.px, self.py)
 end
